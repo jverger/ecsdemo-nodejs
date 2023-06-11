@@ -2,18 +2,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argocd-app.demo
-  namespace: counter-app
+  name: ecsdemo-nodejs
+  #namespace: counter-app
 spec:
   ingressClassName: nginx
   rules:
-  - host: argocd-app.demo
+  - host: ecsdemo-nodejs
     http:
       paths:
       - backend:
           service:
-            name: counter-service
+            name: ecsdemo-nodejs
             port:
               number: 80
-        path: /argocd-app
+        path: /
         pathType: Prefix
